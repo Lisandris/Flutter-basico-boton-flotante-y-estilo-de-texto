@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
    
     return Scaffold(
       appBar: AppBar( 
-        title: const Text (' Hola Lis'),
+        title: const Text (' Hola Lisandris'),
         elevation: 0,
       ),
       body:  Center(
