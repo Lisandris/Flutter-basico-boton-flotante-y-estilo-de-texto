@@ -29,31 +29,44 @@ class _CounterScreenState extends State<CounterScreen> {
             children: [
               const Text('Numero de Clicks', style: fontSize30 ),
               Text('$counter', style: fontSize30 ),
-             ], 
-             ),
+            ], 
+          ),
       ),
-         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, 
-         floatingActionButton: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-           children: [
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, 
+      floatingActionButton: const CustomFloatingActions(),
+    );
+  }
+}
 
-             FloatingActionButton(
-              child: const Icon( Icons.exposure_plus_1_sharp ),
-                onPressed: () => setState(() => counter++),
-             ),
-  
 
-             FloatingActionButton(
-              child: const Icon( Icons.exposure_outlined ),
-                onPressed: () => setState(() => counter = 0), 
-        ),
+
+class CustomFloatingActions extends StatelessWidget {
+  const CustomFloatingActions({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: const [ 
 
         FloatingActionButton(
-              child: const Icon( Icons.exposure_minus_1_outlined ),
-                onPressed: () => setState( () => counter-- ), 
+          onPressed: null,
+          child: Icon( Icons.exposure_plus_1_sharp ),
+        ), 
+
+
+        FloatingActionButton(
+          onPressed: null,
+          child: Icon( Icons.exposure_outlined ), 
+        ), 
+
+        FloatingActionButton(
+          onPressed: null,
+          child: Icon( Icons.exposure_minus_1_outlined ), 
         ),
-           ],
-         ),
+      ],
     );
-   }
+  }
 }
